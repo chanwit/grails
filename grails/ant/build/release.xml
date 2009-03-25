@@ -40,7 +40,9 @@
                <exclude name="**/CVS/**"/>
                <exclude name="hibernate**"/>
                <exclude name="javassist**"/>
-               <exclude name="aspectj**"/>
+               <exclude name="aspectjw**"/>
+               <exclude name="aspectjt**"/>
+               <exclude name="org.aspectj**"/>
                <exclude name="dom4j**"/>
            </fileset>
         </copy>
