@@ -66,7 +66,7 @@ chapterContents = new StringBuffer()
 chapterTitle = null
 
 void writeChapter(String title, StringBuffer content) {
-    new File("output/guide/${title}.html").withWriter {
+    new File("output/guide/${title}.html").withWriter("UTF-8") {
         template.make(title: title, content: content.toString()).writeTo(it)
     }
     content.delete(0, content.size()) // clear buffer
@@ -74,7 +74,7 @@ void writeChapter(String title, StringBuffer content) {
 
 ant.mkdir(dir: "output/guide")
 ant.mkdir(dir: "output/guide/pages")
-new File("resources/style/guideItem.html").withReader {reader ->
+new File("resources/style/guideItem.html").withReader("UTF-8") {reader ->
     template = templateEngine.createTemplate(reader)
 
     for (entry in book) {
@@ -105,13 +105,13 @@ new File("resources/style/guideItem.html").withReader {reader ->
 
         context.set(SOURCE_FILE, entry.value)
         context.set(CONTEXT_PATH, "..")
-        def body = engine.render(entry.value.text, context)
+        def body = engine.render(entry.value.getText("UTF-8"), context)
 
         toc << "<div class=\"tocItem\" style=\"margin-left:${margin}px\"><a href=\"#${title}\">${title}</a></div>"
         fullContents << header << body
         chapterContents << header << body
 
-        new File("output/guide/pages/${title}.html").withWriter {
+        new File("output/guide/pages/${title}.html").withWriter("UTF-8") {
             template.make(title: title, content: body).writeTo(it)
         }
     }
@@ -148,14 +148,14 @@ vars = [
         body: fullContents.toString()
 ]
 
-new File("./resources/style/layout.html").withReader {reader ->
+new File("./resources/style/layout.html").withReader("UTF-8") {reader ->
     template = templateEngine.createTemplate(reader)
-    new File("output/guide/single.html").withWriter {out ->
+    new File("output/guide/single.html").withWriter("UTF-8") {out ->
         template.make(vars).writeTo(out)
     }
     vars.toc = soloToc
     vars.body = ""
-    new File("output/guide/index.html").withWriter {out ->
+    new File("output/guide/index.html").withWriter("UTF-8") {out ->
         template.make(vars).writeTo(out)
     }
 }
@@ -163,7 +163,7 @@ new File("./resources/style/layout.html").withReader {reader ->
 menu = new StringBuffer()
 files = new File("src/ref").listFiles().toList().sort()
 reference = [:]
-new File("resources/style/referenceItem.html").withReader {reader ->
+new File("resources/style/referenceItem.html").withReader("UTF-8") {reader ->
     template = templateEngine.createTemplate(reader)
     for (f in files) {
         if (f.directory && !f.name.startsWith(".")) {
@@ -179,7 +179,7 @@ new File("resources/style/referenceItem.html").withReader {reader ->
                 context.set(SOURCE_FILE, usageFile.name)
                 context.set(CONTEXT_PATH, "../..")
                 def contents = engine.render(data, context)
-                new File("output/ref/${f.name}/Usage.html").withWriter {out ->
+                new File("output/ref/${f.name}/Usage.html").withWriter("UTF-8") {out ->
                     template.make(content: contents).writeTo(out)
                 }
                 menu << "<div class=\"menuUsageItem\"><a href=\"${f.name}/Usage.html\" target=\"mainFrame\">Usage</a></div>"
@@ -193,7 +193,7 @@ new File("resources/style/referenceItem.html").withReader {reader ->
                 context.set(CONTEXT_PATH, "../..")
                 def contents = engine.render(data, context)
                 //println "Generating reference item: ${name}"
-                new File("output/ref/${f.name}/${name}.html").withWriter {out ->
+                new File("output/ref/${f.name}/${name}.html").withWriter("UTF-8") {out ->
                     template.make(content: contents).writeTo(out)
                 }
             }
@@ -202,9 +202,9 @@ new File("resources/style/referenceItem.html").withReader {reader ->
 
 }
 vars.menu = menu
-new File("./resources/style/menu.html").withReader {reader ->
+new File("./resources/style/menu.html").withReader("UTF-8") {reader ->
     template = templateEngine.createTemplate(reader)
-    new File("output/ref/menu.html").withWriter {out ->
+    new File("output/ref/menu.html").withWriter("UTF-8") {out ->
         template.make(vars).writeTo(out)
     }
 }
