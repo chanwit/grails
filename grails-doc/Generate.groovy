@@ -10,7 +10,8 @@ CONTEXT_PATH = DocEngine.CONTEXT_PATH
 SOURCE_FILE = DocEngine.SOURCE_FILE
 
 props = new Properties()
-new File("./resources/doc.properties").withInputStream {input ->
+"native2ascii -encoding UTF8 ./resources/doc.properties ./resources/doc.properties.2".execute().waitFor()
+new File("./resources/doc.properties.2").withInputStream {input ->
     props.load(input)
 }
 new File("${GRAILS_HOME}/build.properties").withInputStream {input ->
