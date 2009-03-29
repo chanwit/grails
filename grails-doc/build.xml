@@ -1,4 +1,4 @@
-<project name="grails-docs" default="dist">
+<project name="grails-docs" default="docs">
 
     <taskdef name="svn" classname="org.tigris.subversion.svnant.SvnTask" >
         <classpath>
