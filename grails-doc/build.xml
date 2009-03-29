@@ -54,11 +54,11 @@
         <delete dir="dist" />
     </target>
 
-    <target name="docs" depends="grails-check" if="has.grails"
+    <target name="docs"
             description="Generate the Grails Guide and Reference docs">
         <taskdef name="groovyc"  classname="org.codehaus.groovy.ant.Groovyc">
             <classpath>
-                <fileset dir="checkout/grails/lib" includes="*.jar"  />
+                <fileset dir="../grails/lib" includes="*.jar"  />
                 <fileset dir="lib" />
                 <pathelement location="bin" />
             </classpath>
@@ -69,7 +69,7 @@
         <copy todir="bin" file="resources/log4j.properties"/>
         <groovyc srcdir="src/groovy" destdir="bin">
             <classpath>
-                <fileset dir="checkout/grails/lib" includes="*.jar"  />
+                <fileset dir="../grails/lib" includes="*.jar"  />
                 <fileset dir="lib" />
                 <pathelement location="bin" />
             </classpath>
@@ -79,7 +79,7 @@
         <java classname="groovy.ui.GroovyMain" failonerror="true">
             <arg value="Generate" />
             <classpath>
-                <fileset dir="checkout/grails/lib" includes="*.jar"  />
+                <fileset dir="../grails/lib" includes="*.jar"  />
                 <fileset dir="lib" />
                 <pathelement location="bin" />
             </classpath>
