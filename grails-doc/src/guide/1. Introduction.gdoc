@@ -2,9 +2,9 @@
 
 เฟรมเวิร์คประเภทไดนามิค เช่น เรลส์ จังโก้ หรือ เทอร์โบเกียร์ส ช่วยเปิดทางสู่วิธีการคิดแบบใหม่สำหรับพัฒนาเวบแอพพลิเคชั่น  เกรลส์สร้างขึ้นบนแนวคิดดังกล่าวและลดความซับซ้อนของการสร้างเวบแอพพลิเคชั่นบนจาวาแพล็ตฟอร์มไปอย่างมาก จุดที่ทำให้เกรลส์ต่างออกไปก็คือเกรลส์นั้นสร้างขึ้นจากแนวคิดที่กล่าวมาบนเทคโนโลยีที่มีอยู่แล้วอย่าง Spring และ Hibernate
 
-Grails is a full stack framework and attempts to solve as many pieces of the web development puzzle through the core technology and it's associated plug-ins. Included out the box are things like:
+เกรลส์เป็นเฟรมเวิร์คที่มีครบทุกชั้น (full stack) และพยายามที่จะแก้ปัญหาของการพัฒนาเวบแอพพลิเคชั่นให้ได้มากที่สุดด้วย คอร์เทคโนโลยีและระบบปลั๊กอินที่มีมาด้วย เกรลส์มากับความสามารถต่อไปนี้แบบแกะกล่อง :
 
-* An easy to use Object Relational Mapping (ORM) layer built on [Hibernate|http://www.hibernate.org]
+* ระบบช่วยในการแม็พ อ็อบเจ็ค-รีเลชั่นแนล ที่ง่ายต่อการใช้งาน ซึ่งพัฒนาต่อจาก [Hibernate|http://www.hibernate.org]
 * An expressive view technology called Groovy Server Pages (GSP)
 * A controller layer built on "Spring":http://www.springframework.org MVC                                 
 * A command line scripting environment built on the Groovy-powered "Gant":http://groovy.codehaus.org/Gant
