@@ -1,17 +1,16 @@
-Grails, release 1.1.1 (May, 2009)
------------------------------------
-http://grails.org/
+Benjarong Grails distribution, release 1.0 (July, 2009)
+--------------------------------------------------------
+http://benjarong.github.com
 
 
 1. INTRODUCTION
 =============================================================================
 
+Benjarong is a Grails distribution. It produces a Grails-compatible application. It is completely based on Grails, a web application development platform based on the Groovy language that endorses the DRY (don't repeat yourself) and coding-by-convention philosophies, with an addition set of plugins. Benjarong runs on the Java Virtual Machine and thus has access to the entire Java Platform.
 
-Grails is a web application framework based on the Groovy language that endorses the DRY (don't repeat yourself) and coding-by-convention philosophies. Grails runs on the Java Virtual Machine and thus has access to the entire Java Platform.
+With Benjarong you can easily create web applications thanks to:
 
-With Grails you can easily create web applications thanks to:
-
-- a complete development and deployment environment. All dependencies and configuration that is required to the run Grails applications in a web server are provided by Grails. The only thing you have to worry about is your application code.
+- a complete development and deployment environment. Benjarong will produce a Grails application. All dependencies and configuration that is required to the run Grails applications in a web server are provided by Benjarong. The only thing you have to worry about is your application code.
 
 - inclusion of an embedded Jetty web server
 
@@ -30,9 +29,9 @@ With Grails you can easily create web applications thanks to:
 
 To get started follow these steps:
 
-- create a GRAILS_HOME environment variable that points to the path of the Grails distribution (the folder contain this file).
+- create a GRAILS_HOME environment variable that points to the path of the Benjarong distribution (the folder contain this file).
 
-- add the bin folder in the Grails distribution to the PATH environment variable
+- add the bin folder in the Benjarong distribution to the PATH environment variable
 
 On a Windows computer these step are done as follows:
 
@@ -71,6 +70,6 @@ grails upgrade
 ...for each project.
 
 =============================================================================
-Enjoy working with Grails.
+Enjoy coding with Benjarong.
 
-The Grails team.
+The Benjarong team.
